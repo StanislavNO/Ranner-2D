@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Base : MonoBehaviour
+    public class Base : MonoBehaviour, IAttacker
     {
         [SerializeField] private int _health;
+
+        private int _damage = 1000;
 
         public int Health => _health;
 
@@ -13,6 +15,11 @@ namespace Assets.Scripts
         {
             if (collision.TryGetComponent<IAttacker>(out IAttacker attacker))
                 SetDamage(attacker);
+        }
+
+        public int Attack()
+        {
+            return _damage;
         }
 
         private void SetDamage( IAttacker attacker)
