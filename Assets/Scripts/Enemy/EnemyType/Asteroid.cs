@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Spawner : MonoBehaviour
+    public class Asteroid : Enemy
     {
-        [SerializeField] private Enemy _enemy;
+
     }
 }

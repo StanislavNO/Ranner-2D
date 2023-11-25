@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts
 {
-    public abstract class Enemy : MonoBehaviour
+    [RequireComponent(typeof(EnemyLife))]
+    public abstract class Enemy : MonoBehaviour, IAttacker
     {
-        [SerializeField] private int _damage;
+        [SerializeField] protected int Damage;
 
-
-
-        private void Die()
+        public int Attack()
         {
-            
+            return Damage;
         }
     }
 }
