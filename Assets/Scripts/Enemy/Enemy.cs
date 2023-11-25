@@ -3,19 +3,15 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    public class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour
     {
+        [SerializeField] private int _damage;
 
-        // Use this for initialization
-        void Start()
+
+
+        private void Die()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            
         }
     }
 }
