@@ -35,7 +35,7 @@ namespace Assets.Scripts
 
         private void Die()
         {
-            Debug.Log("Die");
+            gameObject.SetActive(false);
         }
     }
 }

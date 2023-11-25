@@ -11,7 +11,6 @@ namespace Assets.Scripts
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("triger");
             if (collision.TryGetComponent<IAttacker>(out IAttacker attacker))
                 SetDamage(attacker);
         }
@@ -21,8 +20,6 @@ namespace Assets.Scripts
             int damage = attacker.Attack();
             if (damage > 0)
                 _health -= damage;
-
-            Debug.Log("set");
         }
     }
 }

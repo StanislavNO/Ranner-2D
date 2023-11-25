@@ -9,7 +9,7 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            transform.Translate(Vector3.left * _speed * Time.deltaTime);
+            transform.Translate(Vector2.left * _speed * Time.deltaTime);
         }
     }
 }
