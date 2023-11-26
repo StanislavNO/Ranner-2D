@@ -23,7 +23,7 @@ namespace Assets.Scripts
                 SetDamage(attacker.Attack());
         }
 
-        public void SetDamage(int damage)
+        private void SetDamage(int damage)
         {
             if (damage > 0)
                 LivePoint -= damage;
