@@ -10,10 +10,12 @@ namespace Assets.Scripts
         [SerializeField] private UnityEvent _healthChanged;
         [SerializeField] private int _point;
 
+        public int MaxPoint { get; private set; }
         public int LivePoint { get; private set; }
 
         private void Awake()
         {
+            MaxPoint = _point;
             LivePoint = _point;
         }
 

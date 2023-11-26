@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
     public class GameOverScreen : MonoBehaviour
     {
         [SerializeField] private CanvasGroup _gameOverGroup;
-        [SerializeField] private Button _restart;
-        [SerializeField] private Button _exit;
 
         private void Awake()
         {
@@ -19,6 +18,17 @@ namespace Assets.Scripts
         {
             Time.timeScale = 0;
             _gameOverGroup.alpha = 1;
+        }
+
+        public void GetRestart(int sceneNumbers = 0)
+        {
+            SceneManager.LoadScene(sceneNumbers);
+            Time.timeScale = 1;
+        }
+
+        public void GetExit()
+        { 
+            Application.Quit();
         }
     }
 }
