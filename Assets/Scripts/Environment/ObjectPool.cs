@@ -12,17 +12,14 @@ namespace Assets.Scripts
 
         private List<GameObject> _pool = new();
 
-        protected void Initialize(GameObject _prefab, int number)
+        protected void Initialize(GameObject _prefab)
         {
-            for (int i = 0; i < number; i++)
-            {
-                GameObject spawned = Instantiate(
-                    _prefab,
-                    _container.transform);
+            GameObject spawned = Instantiate(
+                _prefab,
+                _container.transform);
 
-                spawned.SetActive(false);
-                _pool.Add(spawned);
-            }
+            spawned.SetActive(false);
+            _pool.Add(spawned);
         }
 
         protected bool TryGetObject(out GameObject result)

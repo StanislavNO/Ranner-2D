@@ -17,12 +17,11 @@ namespace Assets.Scripts.UI
 
         public void OnHealthChange()
         {
-            Debug.Log(health.MaxPoint + " " + health.LivePoint);
             float healthNormalize = 
                 health.LivePoint / 
                 (health.MaxPoint / 100.0f) 
                 / 100.0f;
-            Debug.Log(healthNormalize);
+
             _healthImage.fillAmount = healthNormalize;
             _healthImage.color = _healthGradient.Evaluate(healthNormalize);
         }

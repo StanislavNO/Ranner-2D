@@ -25,7 +25,7 @@ namespace Assets.Scripts
 
             if (_time >= _secondsBetweenSpawn)
             {
-                if(TryGetObject(out GameObject enemy))
+                if (TryGetObject(out GameObject enemy))
                 {
                     _time = 0;
 
@@ -49,11 +49,17 @@ namespace Assets.Scripts
 
         private void CreateEnemy(int numberEnemies = 1)
         {
-            int enemyIndex = Random.Range(
-                _indexFirstEnemy,
-                _enemies.Length);
+            int enemyIndex;
 
-            Initialize(_enemies[enemyIndex].gameObject, numberEnemies);
+            for (int i = 0; i < numberEnemies; i++)
+            {
+                enemyIndex = Random.Range(
+                    _indexFirstEnemy,
+                    _enemies.Length);
+                Debug.Log(enemyIndex);
+
+                Initialize(_enemies[enemyIndex].gameObject);
+            }
         }
     }
 }
