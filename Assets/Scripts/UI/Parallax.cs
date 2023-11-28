@@ -8,8 +8,8 @@ namespace Assets.Scripts
     {
         [SerializeField] private RawImage _image;
         [SerializeField] private float _speed;
-        [SerializeField] private bool IsVertical;
-        [SerializeField] private bool IsHorizontal;
+        [SerializeField] private bool _isVertical;
+        [SerializeField] private bool _isHorizontal;
 
         private float _fadeTime;
 
@@ -17,16 +17,20 @@ namespace Assets.Scripts
         {
             _fadeTime += _speed * Time.deltaTime;
 
-            if (IsVertical) 
-            { 
-                _image.uvRect = new(_fadeTime, 0, 
-                    _image.uvRect.width, 
+            if (_isVertical)
+            {
+                _image.uvRect = new(
+                    0,
+                    _fadeTime,
+                    _image.uvRect.width,
                     _image.uvRect.height);
             }
 
-            if (IsHorizontal)
+            if (_isHorizontal)
             {
-                _image.uvRect = new(0,_fadeTime,
+                _image.uvRect = new(
+                    _fadeTime,
+                    0,
                     _image.uvRect.width,
                     _image.uvRect.height);
             }

@@ -24,6 +24,9 @@ namespace Assets.Scripts
         {
             if (collision.TryGetComponent<IAttacker>(out IAttacker damager))
                 SetDamage(damager);
+
+            if (collision.TryGetComponent<Player>(out Player player))
+                Die();
         }
 
         private void SetDamage(IAttacker damager)

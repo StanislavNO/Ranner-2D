@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts
 {
     public class HealthImager : MonoBehaviour
     {
-        [SerializeField] private Health health;
+        [SerializeField] private Health _health;
         [SerializeField] private Gradient _healthGradient;
         [SerializeField] private Image _healthImage;
 
@@ -18,9 +18,11 @@ namespace Assets.Scripts.UI
         public void OnHealthChange()
         {
             float healthNormalize = 
-                health.LivePoint / 
-                (health.MaxPoint / 100.0f) 
+                _health.LivePoint / 
+                (_health.MaxPoint / 100.0f) 
                 / 100.0f;
+
+            Debug.Log(healthNormalize+ " " +_health.LivePoint);
 
             _healthImage.fillAmount = healthNormalize;
             _healthImage.color = _healthGradient.Evaluate(healthNormalize);

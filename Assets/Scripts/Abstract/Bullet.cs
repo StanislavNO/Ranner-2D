@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -17,7 +16,9 @@ namespace Assets.Scripts
 
         protected void LateUpdate()
         {
-            _rigidBody.AddForce(Vector2.right * _speed, ForceMode2D.Impulse);
+            _rigidBody.AddForce(
+                Vector2.right * _speed, 
+                ForceMode2D.Impulse);
         }
 
         public abstract int Attack();

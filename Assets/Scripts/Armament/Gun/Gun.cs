@@ -10,14 +10,13 @@ namespace Assets.Scripts
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
                 Shoot();
-            }
         }
 
         public void Shoot()
         {
-            Instantiate( _bullet, transform.position, Quaternion.identity);
+            AudioSource.Play();
+            Instantiate( _bullet, transform.position + Vector3.right, Quaternion.identity);
         }
     }
 }

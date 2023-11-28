@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class Spawner : ObjectPool
     {
         [SerializeField] private Enemy[] _enemies;
-        [SerializeField] private float _secondsBetweenSpawn;
         [SerializeField] private Transform[] _spawnPoints;
+        [SerializeField] private float _secondsBetweenSpawn;
 
         private float _time = 0;
 
@@ -56,7 +55,6 @@ namespace Assets.Scripts
                 enemyIndex = Random.Range(
                     _indexFirstEnemy,
                     _enemies.Length);
-                Debug.Log(enemyIndex);
 
                 Initialize(_enemies[enemyIndex].gameObject);
             }

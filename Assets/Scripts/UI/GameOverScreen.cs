@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
