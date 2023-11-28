@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,14 @@ namespace Assets.Scripts
         {
             if (collision.TryGetComponent<IAttacker>(out IAttacker attacker))
                 SetDamage(attacker.Attack());
+
+            if (collision.TryGetComponent<Medicament>(out Medicament medicament))
+                AddLivePoints(medicament.Power);
+        }
+
+        private void AddLivePoints(int value)
+        {
+            LivePoint += value;
         }
 
         private void SetDamage(int damage)

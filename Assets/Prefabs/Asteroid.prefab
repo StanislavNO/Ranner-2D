@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1152923371657885414}
   - component: {fileID: 6785434689607453444}
   - component: {fileID: 5780334053325692180}
+  - component: {fileID: 3181647373775001167}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -174,6 +175,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _life: 1
+  _livesAreOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3181647373775001167}
+        m_TargetAssemblyTypeName: Assets.Scripts.EnemyBag, Assembly-CSharp
+        m_MethodName: GetLoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6785434689607453444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +216,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+--- !u!114 &3181647373775001167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572014480531241304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1b1479d50e50443b4a18f24713ce4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loot: {fileID: 4284821791429801826, guid: 9798ab66268851b47bdd086614430ee4, type: 3}

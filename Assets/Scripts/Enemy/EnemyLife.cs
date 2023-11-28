@@ -2,12 +2,14 @@
 using System.Collections;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts
 {
     public class EnemyLife : MonoBehaviour
     {
         [SerializeField] private int _life;
+        [SerializeField] private UnityEvent _livesAreOver;
 
         private int _minLife;
 
@@ -35,6 +37,7 @@ namespace Assets.Scripts
 
         private void Die()
         {
+            _livesAreOver?.Invoke();
             gameObject.SetActive(false);
         }
     }

@@ -3,10 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public abstract class Armament : MonoBehaviour , IAttacker
+    public abstract class Armament : MonoBehaviour
     {
-        [SerializeField] protected int Damage;
-
-        public abstract int Attack();
     }
 }

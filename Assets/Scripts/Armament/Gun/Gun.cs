@@ -5,9 +5,19 @@ namespace Assets.Scripts
 {
     public class Gun : Armament
     {
-        public override int Attack()
+        [SerializeField] private Bullet _bullet;
+
+        private void Update()
         {
-            return Damage;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Shoot();
+            }
+        }
+
+        public void Shoot()
+        {
+            Instantiate( _bullet, transform.position, Quaternion.identity);
         }
     }
 }
