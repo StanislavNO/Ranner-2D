@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEditor.ShaderGraph.Internal;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.Scripts
@@ -17,15 +14,15 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            _life = 0;
+            _minLife = 0;
         }
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<IAttacker>(out IAttacker damager))
+            if (collision.TryGetComponent(out IAttacker damager))
                 SetDamage(damager);
 
-            if (collision.TryGetComponent<Player>(out Player player))
+            if (collision.TryGetComponent(out Player _))
                 Die();
         }
 

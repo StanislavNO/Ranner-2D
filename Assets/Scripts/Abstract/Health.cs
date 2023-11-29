@@ -22,12 +22,10 @@ namespace Assets.Scripts
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<IAttacker>(out IAttacker attacker))
-            {
+            if (collision.TryGetComponent(out IAttacker attacker))
                 SetDamage(attacker.Attack());
-            }
 
-            if (collision.TryGetComponent<Medicament>(out Medicament medicament)
+            if (collision.TryGetComponent(out Medicament medicament)
                 && _isHealing)
             {
                 AddLivePoints(medicament.Power);
@@ -35,12 +33,12 @@ namespace Assets.Scripts
             }
         }
 
-        private void AddLivePoints(int value)
+        private void AddLivePoints(int points)
         {
-            if (value >= uint.MinValue)
+            if (points >= uint.MinValue)
             {
-                if (value + LivePoint <= MaxPoint)
-                    LivePoint += value;
+                if (points + LivePoint <= MaxPoint)
+                    LivePoint += points;
                 else
                     LivePoint = MaxPoint;
 
@@ -55,9 +53,6 @@ namespace Assets.Scripts
 
             if (LivePoint <= uint.MinValue)
                 _livesAreOver.Invoke();
-
-            if(_isHealing)
-                Debug.Log("plaer " + LivePoint);
 
             _healthChanged.Invoke();
         }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
@@ -21,8 +20,6 @@ namespace Assets.Scripts
                 _health.LivePoint / 
                 (_health.MaxPoint / 100.0f) 
                 / 100.0f;
-
-            Debug.Log(healthNormalize+ " " +_health.LivePoint);
 
             _healthImage.fillAmount = healthNormalize;
             _healthImage.color = _healthGradient.Evaluate(healthNormalize);

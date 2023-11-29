@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
@@ -17,10 +16,15 @@ namespace Assets.Scripts
         {
             _fadeTime += _speed * Time.deltaTime;
 
+            TryMove();
+        }
+
+        private void TryMove()
+        {
             if (_isVertical)
             {
                 _image.uvRect = new(
-                    0,
+                    _image.uvRect.x,
                     _fadeTime,
                     _image.uvRect.width,
                     _image.uvRect.height);
@@ -30,7 +34,7 @@ namespace Assets.Scripts
             {
                 _image.uvRect = new(
                     _fadeTime,
-                    0,
+                    _image.uvRect.y,
                     _image.uvRect.width,
                     _image.uvRect.height);
             }

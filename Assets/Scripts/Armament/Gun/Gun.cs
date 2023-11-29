@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -15,7 +14,7 @@ namespace Assets.Scripts
 
         public void Shoot()
         {
-            AudioSource.Play();
+            Audio.Play();
             Instantiate( _bullet, transform.position + Vector3.right, Quaternion.identity);
         }
     }

@@ -4,6 +4,6 @@ namespace Assets.Scripts
 {
     public abstract class Armament : MonoBehaviour
     {
-        [SerializeField] protected AudioSource AudioSource;
+        [SerializeField] protected Sounder Audio;
     }
 }
